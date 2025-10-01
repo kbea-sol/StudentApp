@@ -1,5 +1,5 @@
 class Student (val id : Int, var name : String,
-               var course : String, var markIn : Int){
+               var course : String){
 
     var mark = 0
         set(newMark){
@@ -8,13 +8,9 @@ class Student (val id : Int, var name : String,
             }
         }
 
-    init{
-        mark = markIn
-    }
-
     override fun toString() : String
     {
-        return "Name: $name\nCourse: $course\nMark: $markIn"
+        return "Name: $name\nCourse: $course\nMark: $mark"
     }
 
     fun getGrade() : String{
