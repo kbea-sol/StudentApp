@@ -27,6 +27,12 @@ class Student (val id : Int, var name : String,
             else -> "Invalid mark"
         }
     }
+    fun didPass() : Boolean{
+        if(this.mark >= 40){
+            return true
+        }
+        return false
+    }
 
 
 
