@@ -5,14 +5,16 @@ fun main()
 
 
     val ih : InputHandler = InputHandlerCLI()
-    var students = arrayOf<Student>()
-    var id : Int = 0
 
-    val name = ih.getString("Enter student name")
-    val course = ih.getString("Enter student course")
-    val mark = ih.getInt("Enter student mark")
-    var stud = Student(1, name, course, mark)
+    val mark : Int= ih.getInt("Enter mark")
+
+    val stud = Student(1, "Test", "Test")
+    stud.mark = mark
     println(stud.getGrade())
+    println("Did pass: ${stud.didPass()}")
+
+
+//    println(stud.getGrade())
 
 
 //    while(true)
