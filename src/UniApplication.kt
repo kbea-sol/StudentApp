@@ -6,15 +6,27 @@ class UniApplication(val ih : InputHandler, val uni : University){
 
     fun createAndEnrolStudent()
     {
-        val stud : Undergraduate = createStudent()
+        var stud : Student? = null
+        if(ih.getBool("Are you a master's student?")){
+            stud = createMaster()
+        }
+        else{
+            stud = createUndergraduate()
+        }
         uni.enrolStudent(stud)
         id += 1
     }
 
-    private fun createStudent(): Undergraduate{
+    private fun createMaster(): Master{
         val name = ih.getString("Enter a name")
         val course = ih.getString("Enter a course")
-        return Undergraduate(1, name, course)
+        return Master(id, name, course)
+    }
+
+    private fun createUndergraduate(): Undergraduate{
+        val name = ih.getString("Enter a name")
+        val course = ih.getString("Enter a course")
+        return Undergraduate(id, name, course)
     }
 
     fun getStudentById():Student?{
