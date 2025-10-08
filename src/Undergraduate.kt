@@ -1,6 +1,10 @@
 public class Undergraduate(id : Int, name : String, course : String)
     : Student(id, name, course) {
 
+    override fun toString() : String
+    {
+        return "Undergraduate\nName: $name\nCourse: $course\nMark: $mark"
+    }
 
     override fun getGrade(): String {
         return when (this.mark) {

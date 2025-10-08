@@ -10,7 +10,7 @@ abstract class Student (val id : Int, var name : String,
 
     override fun toString() : String
     {
-        return "Name: $name\nCourse: $course\nMark: $mark"
+        return "Student\nName: $name\nCourse: $course\nMark: $mark"
     }
 
     abstract fun getGrade() : String
