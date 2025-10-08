@@ -21,9 +21,24 @@ fun main()
 
         when (option){
             1 -> app.createAndEnrolStudent()
-            2 -> println(app.getStudentById())
-            3 -> for(student in app.getStudentsByName()) {
-                println(student)
+            2 -> {
+                val stud : Student? = app.getStudentById()
+                if(stud == null){
+                    println("Invalid student id")
+                    continue
+                }
+                println(stud)
+            }
+            3 -> {
+                val studlist : List<Student> = app.getStudentsByName()
+                if(studlist.isEmpty())
+                {
+                    println("No students with given name to display")
+                    continue
+                }
+                for(student in studlist) {
+                    println(student)
+                }
             }
             4 -> { println("Exiting...")
                 exitProcess(0)
