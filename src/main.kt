@@ -36,9 +36,10 @@ fun main()
                     println(student)
                 }
             }
-            4 -> { println("Exiting...")
+            4 -> {
+                println("Exiting...")
                 exitProcess(0)
-                }
+            }
             else -> println("Invalid value, Options: [1|2|3|4]")
         }
 
