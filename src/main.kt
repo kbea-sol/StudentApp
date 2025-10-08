@@ -4,14 +4,10 @@ import kotlin.system.exitProcess
 
 fun main()
 {
-
-
     val uni : University = University()
     val ih : InputHandler = InputHandlerCLI()
     val app : UniApplication = UniApplication(ih, uni)
-    uni.enrolStudent(Undergraduate(1, "Kieran", "Test"))
-    uni.enrolStudent(Undergraduate(2, "Kezza", "Test2"))
-    println(uni.findStudentById(2))
+
     while(true)
     {
         val option : Int = ih.getInt("1. Add a student\n" +
